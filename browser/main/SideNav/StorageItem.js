@@ -5,6 +5,7 @@ import styles from './StorageItem.styl'
 import { hashHistory } from 'react-router'
 import modal from 'browser/main/lib/modal'
 import CreateFolderModal from 'browser/main/modals/CreateFolderModal'
+import RevertModal from 'browser/main/modals/RevertModal'
 import RenameFolderModal from 'browser/main/modals/RenameFolderModal'
 import dataApi from 'browser/main/lib/dataApi'
 import StorageItemChild from 'browser/components/StorageItem'
@@ -57,10 +58,25 @@ class StorageItem extends React.Component {
       {
         label: i18n.__('Unlink Storage'),
         click: (e) => this.handleUnlinkStorageClick(e)
+      },
+      {
+        type: 'separator'
+      },
+      {
+        label: i18n.__('Revert'),
+        click: (e) => this.handleRevertStorageClick(e)
       }
     ])
   }
+  handleRevertStorageClick (e) {
+      console.log("storage reverted")
+      const { storage } = this.props
 
+      console.log(storage)
+      modal.open(RevertModal, {
+        storage
+      })
+  }
   handleUnlinkStorageClick (e) {
     const index = dialog.showMessageBox(remote.getCurrentWindow(), {
       type: 'warning',
