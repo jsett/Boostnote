@@ -43,6 +43,7 @@ var config = {
     'markdown-it-admonition',
     'markdown-toc',
     'devtron',
+    'nodegit',
     '@rokt33r/season',
     {
       react: 'var React',

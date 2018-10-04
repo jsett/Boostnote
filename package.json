@@ -87,6 +87,7 @@
     "mousetrap": "^1.6.1",
     "mousetrap-global-bind": "^1.1.0",
     "node-ipc": "^8.1.0",
+    "nodegit": "^0.22.2",
     "raphael": "^2.2.7",
     "react": "^15.5.4",
     "react-autosuggest": "^9.4.0",
